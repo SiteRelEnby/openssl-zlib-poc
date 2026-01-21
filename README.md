@@ -4,6 +4,8 @@ This demonstrates a bug in OpenSSL 3.6.0 (and earlier) where `ossl_comp_zlib_ini
 returns success (1) even when the zlib DSO fails to load, causing NULL pointer
 dereferences when certificate compression is used.
 
+https://github.com/openssl/openssl/pull/29699
+
 ## The Bug
 
 In `crypto/comp/c_zlib.c`, the `ossl_comp_zlib_init()` function:
